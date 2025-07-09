@@ -30,7 +30,7 @@ Users should be able to:
 ![](./Screenshot-mobile.png)
 ![](./Screenshot-tablet.png)
 ![](./Screenshot-desktop.png)
-![](./Screenshot -desktop-error1.png)
+![](./Screenshot-desktop-error1.png)
 ![](./Screenshot-desktop-error2.png)
 ![](./Screenshot-desktop-success.png)
 
