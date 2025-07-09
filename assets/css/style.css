@@ -1,0 +1,305 @@
+:root {
+    --font-family: 'Chivo', sans-serif;
+    /* 300, 700 */
+    --accent-color: hsl(157, 74%, 62%);
+    --error-color: hsl(0, 96%, 61%);
+    --color-950: hsl(224, 35%, 11%);
+    --color-900: hsl(225, 26%, 23%);
+    --color-600: hsl(225, 21%, 45%);
+    --color-300: hsl(225, 40%, 83%);
+    --color-000: hsl(0, 0%, 100%);
+    --spacing-50: 0.4rem;
+    /* 4px */
+    --spacing-100: 0.8rem;
+    /* 8px */
+    --spacing-200: 1.6rem;
+    /* 16px */
+    --spacing-300: 2.4rem;
+    /* 24px */
+    --spacing-400: 3.2rem;
+    /* 32px */
+    --spacing-450: 3.6rem;
+    /* 36px */
+    --spacing-500: 4.0rem;
+    /* 40px */
+    --spacing-550: 4.4rem;
+    /* 44px */
+    --spacing-600: 4.8rem;
+    /* 48px */
+    --spacing-700: 5.6rem;
+    /* 56px */
+    --spacing-800: 6.4rem;
+    /* 64px */
+    --spacing-1000: 8.0rem;
+    /* 80px */
+    --spacing-1100: 8.8rem;
+    /* 88px */
+    --spacing-1300: 10.4rem;
+    /* 104px */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
+
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+    height: 100%;
+    overflow-x: hidden;
+    container-type: size;
+}
+
+body {
+    min-height: 100%;
+
+    overflow-x: hidden;
+
+    background-color: hsla(224, 35%, 11%, 0.9);
+    background-image: url('../mobile/image-host.jpg');
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+
+    color: var(--color-300);
+    font-weight: 300;
+    font-size: 1.4rem;
+    padding: var(--spacing-450);
+    line-height: 1.5;
+
+    display: grid;
+    align-items: center;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-700);
+    place-content: center;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main h1 {
+    font-size: 3.2rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    margin-block-end: var(--spacing-200);
+    max-width: 30ch;
+}
+
+main h1 span {
+    color: var(--color-000);
+}
+
+main p {
+    max-width: 40ch;
+}
+
+.platforms {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: var(--spacing-200);
+    align-items: center;
+    margin-block: var(--spacing-500);
+
+}
+
+.platforms img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    opacity: 0.6;
+    max-height: 2.9rem;
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-100);
+    width: 100%;
+    max-width: 40rem;
+}
+
+.subscribe-form input,
+.subscribe-form button {
+    padding-inline: 2.8rem;
+    padding-block: 1.2rem;
+    border: none;
+    border-radius: 2.8rem;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.subscribe-form input {
+    background-color: var(--color-900);
+    color: var(--color-000);
+}
+
+.subscribe-form input::placeholder {
+    color: hsla(0, 0%, 100%, 0.5);
+}
+
+.subscribe-form button {
+    background-color: var(--accent-color);
+    color: var(--color-950);
+    cursor: pointer;
+}
+
+.subscribe-form button:hover,
+.subscribe-form button:focus {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+        var(--accent-color);
+}
+
+.subscribe-form input:focus,
+.subscribe-form button:focus {
+    outline: none;
+}
+
+.message {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-block-start: 1rem;
+}
+
+.success-message {
+    color: var(--accent-color);
+
+}
+
+.error-message {
+    color: var(--error-color);
+}
+
+.subscribe-form.error input[type='email'] {
+    border: 0.2rem solid var(--error-color);
+}
+
+.hidden {
+    display: none;
+}
+
+@container (min-width: 66.7rem) {
+    body {
+        background-color: var(--color-950);
+        background-image: url('../desktop/bg-pattern-dots.svg'),
+            url('../mobile/image-host.jpg');
+        background-blend-mode: normal;
+        background-position: top 77rem right -13rem, top right;
+        ;
+        background-size: 23.2rem 10.4rem, 46rem;
+        background-attachment: fixed, fixed;
+        font-size: 1.8rem;
+        padding: var(--spacing-550);
+
+    }
+
+    .container {
+        align-items: flex-start;
+        text-align: left;
+        gap: 1.8rem;
+        /*         max-width: 59.2rem; */
+    }
+
+    main {
+        background-color: var(--color-950);
+        align-items: flex-start;
+        padding-block-start: var(--spacing-1100);
+        padding-inline-end: var(--spacing-450);
+        width: 80%;
+        max-width: 59.2rem;
+    }
+
+    main h1 {
+        font-size: var(--spacing-600);
+    }
+
+    .platforms {
+        order: 1;
+        width: 96%;
+        gap: var(--spacing-300);
+        margin-block-start: 5.2rem;
+        margin-block-end: 0;
+
+    }
+
+    .subscribe-form {
+        margin-block-start: 4rem;
+        flex-direction: row;
+        max-width: 44.8rem;
+        gap: 0;
+        background-color: var(--color-900);
+        border-radius: 2.8rem;
+        overflow: hidden;
+        height: 5.2rem;
+        border: 0.4rem solid var(--color-900);
+        justify-content: space-between;
+    }
+
+    .subscribe-form input {
+        flex-grow: 1;
+        text-wrap: nowrap;
+    }
+
+    .subscribe-form button {
+        max-width: 17.3rem;
+        padding: 1rem;
+        flex-grow: 2;
+        text-wrap: nowrap;
+    }
+
+
+
+    .subscribe-form.error {
+        border: 0.2rem solid var(--error-color);
+    }
+
+    .subscribe-form.error input[type='email'] {
+        border: none;
+    }
+
+    .message {
+        margin-inline-start: 3rem;
+    }
+}
+
+@container (min-width: 102.4rem) {
+    body {
+        background-image: url('../desktop/bg-pattern-dots.svg'),
+            url('../desktop/image-host.jpg');
+        background-position: top 79vh right, center right;
+        background-size: 23.2rem 10.4rem, auto 65.4rem;
+        background-attachment: fixed, fixed;
+        justify-items: center;
+    }
+
+    .container {
+        height: 65.4rem;
+        justify-content: space-between;
+        min-width: 80rem;
+        width: 77.7%;
+    }
+
+    main {
+        max-width: 73.6rem;
+    }
+
+    .platforms {
+        max-width: 54.8rem;
+    }
+}
